@@ -4,14 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
         <variable
             name="name"
             type="String" />
-
         <variable
             name="lastName"
             type="String" />
+        <variable
+            name="viewmodel"
+            type="com.nguyen.codelabdatabinding.data.SimpleViewModel"/>
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -25,7 +26,7 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="128dp"
-            android:text="@{name}"
+            android:text="@{viewmodel.name}"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -38,7 +39,7 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="128dp"
-            android:text="@{lastName}"
+            android:text="@{viewmodel.name}"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -77,7 +78,7 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
-            android:onClick="onLike"
+            android:onClick="@{() -> viewmodel.onLike()}"
             android:text="@string/like"
             app:layout_constraintBottom_toTopOf="@+id/progressBar"
             app:layout_constraintEnd_toEndOf="@+id/imageView"
